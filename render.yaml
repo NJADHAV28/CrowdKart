@@ -1,0 +1,24 @@
+# One-click hosting on Render (https://render.com): New → Blueprint → select this repo.
+services:
+  - type: web
+    name: crowdkart
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_BASE_URL
+        value: https://router.bynara.id/v1
+      - key: AI_MODEL
+        value: gemini-2.5-flash
+      - key: AI_API_KEY
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: PAYPAL_ENV
+        value: sandbox

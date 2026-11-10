@@ -1,0 +1,11 @@
+{
+  "appId": "app.crowdkart.mobile",
+  "appName": "CrowdKart",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": { "allowMixedContent": true },
+  "ios": { "contentInset": "always" }
+}

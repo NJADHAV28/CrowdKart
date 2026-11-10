@@ -1,0 +1,908 @@
+{
+  "margherita-pizza": {
+    "product": "Margherita Pizza",
+    "source": "https://en.wikipedia.org/wiki/Pizza_Margherita",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Neapolitan_pizza_at_Trappica_%2848701940197%29.jpg/330px-Neapolitan_pizza_at_Trappica_%2848701940197%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "pepperoni-pizza": {
+    "product": "Pepperoni Pizza",
+    "source": "https://en.wikipedia.org/wiki/Pepperoni",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pepperoni_Pizza_%2829204589095%29.jpg/330px-Pepperoni_Pizza_%2829204589095%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "paneer-tikka-pizza": {
+    "product": "Paneer Tikka Pizza",
+    "source": "https://en.wikipedia.org/wiki/Paneer_tikka",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Paneer_tikka.jpg/330px-Paneer_tikka.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "farmhouse-pizza": {
+    "product": "Farmhouse Pizza",
+    "source": "https://en.wikipedia.org/wiki/Pizza",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/330px-Pizza-3007395.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "coca-cola": {
+    "product": "Coca-Cola",
+    "source": "https://en.wikipedia.org/wiki/Coca-Cola",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Coca_Cola_Flasche_-_Original_Taste.jpg/330px-Coca_Cola_Flasche_-_Original_Taste.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "garlic-bread": {
+    "product": "Garlic Bread",
+    "source": "https://en.wikipedia.org/wiki/Garlic_bread",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Garlicbread.jpg/330px-Garlicbread.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-lava-cake": {
+    "product": "Chocolate Lava Cake",
+    "source": "https://en.wikipedia.org/wiki/Molten_chocolate_cake",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Chocolate_Fondant.jpg/330px-Chocolate_Fondant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cheese-burger": {
+    "product": "Cheese Burger",
+    "source": "https://en.wikipedia.org/wiki/Cheeseburger",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/330px-Cheeseburger.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "french-fries": {
+    "product": "French Fries",
+    "source": "https://en.wikipedia.org/wiki/French_fries",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/French_Fries.JPG/330px-French_Fries.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "classic-veg-burger": {
+    "product": "Classic Veg Burger",
+    "source": "https://en.wikipedia.org/wiki/Veggie_burger",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/%D7%94%D7%9E%D7%91%D7%95%D7%A8%D7%92%D7%A8_%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99.jpg/330px-%D7%94%D7%9E%D7%91%D7%95%D7%A8%D7%92%D7%A8_%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "crispy-chicken-burger": {
+    "product": "Crispy Chicken Burger",
+    "source": "https://en.wikipedia.org/wiki/Chicken_sandwich",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Chicken_salad_sandwich_01.jpg/330px-Chicken_salad_sandwich_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "hot-dog": {
+    "product": "Hot Dog",
+    "source": "https://en.wikipedia.org/wiki/Hot_dog",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hot_dog_with_mustard.png/330px-Hot_dog_with_mustard.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chicken-nuggets": {
+    "product": "Chicken Nuggets",
+    "source": "https://en.wikipedia.org/wiki/Chicken_nugget",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Chicken_Nuggets.jpg/330px-Chicken_Nuggets.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chicken-fried-rice": {
+    "product": "Chicken Fried Rice",
+    "source": "https://en.wikipedia.org/wiki/Fried_rice",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Koh_Mak%2C_Thailand%2C_Fried_rice_with_seafood%2C_Thai_fried_rice.jpg/330px-Koh_Mak%2C_Thailand%2C_Fried_rice_with_seafood%2C_Thai_fried_rice.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cappuccino": {
+    "product": "Cappuccino",
+    "source": "https://en.wikipedia.org/wiki/Cappuccino",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cappuccino_in_original.jpg/330px-Cappuccino_in_original.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cafe-latte": {
+    "product": "Cafe Latte",
+    "source": "https://en.wikipedia.org/wiki/Latte",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Caffe_Latte_at_Pulse_Cafe.jpg/330px-Caffe_Latte_at_Pulse_Cafe.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-brownie": {
+    "product": "Chocolate Brownie",
+    "source": "https://en.wikipedia.org/wiki/Chocolate_brownie",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Chocolatebrownie.JPG/330px-Chocolatebrownie.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "brown-bread": {
+    "product": "Brown Bread",
+    "source": "https://en.wikipedia.org/wiki/Brown_bread",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Kommissbrot.jpg/330px-Kommissbrot.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "black-forest-pastry": {
+    "product": "Black Forest Pastry",
+    "source": "https://en.wikipedia.org/wiki/Black_Forest_gateau",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Black_Forest_gateau.jpg/330px-Black_Forest_gateau.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "butter-cookies": {
+    "product": "Butter Cookies",
+    "source": "https://en.wikipedia.org/wiki/Butter_cookie",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/2019-11-29_14_52_43_The_interior_of_a_tin_of_McKenzie_%26_Lloyds_Danish_Style_Butter_Cookies_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg/330px-2019-11-29_14_52_43_The_interior_of_a_tin_of_McKenzie_%26_Lloyds_Danish_Style_Butter_Cookies_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "rusk": {
+    "product": "Rusk",
+    "source": "https://en.wikipedia.org/wiki/Rusk",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Zwieback-1.jpg/330px-Zwieback-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-cake": {
+    "product": "Chocolate Cake",
+    "source": "https://en.wikipedia.org/wiki/Chocolate_cake",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Chocolate_fudge_cake.jpg/330px-Chocolate_fudge_cake.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "donut": {
+    "product": "Donut",
+    "source": "https://en.wikipedia.org/wiki/Doughnut",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/330px-Glazed-Donut.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "kanda-bhaji": {
+    "product": "Kanda Bhaji",
+    "source": "https://en.wikipedia.org/wiki/Pakora",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Onion_pakora_-_a.jpg/330px-Onion_pakora_-_a.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "dal-tadka": {
+    "product": "Dal Tadka",
+    "source": "https://en.wikipedia.org/wiki/Dal",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/3_types_of_lentil.png/330px-3_types_of_lentil.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-biryani": {
+    "product": "Veg Biryani",
+    "source": "https://en.wikipedia.org/wiki/Biryani",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/%22Hyderabadi_Dum_Biryani%22.jpg/330px-%22Hyderabadi_Dum_Biryani%22.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chicken-tandoori": {
+    "product": "Chicken Tandoori",
+    "source": "https://en.wikipedia.org/wiki/Tandoori_chicken",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Chickentandoori.jpg/330px-Chickentandoori.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "butter-chicken": {
+    "product": "Butter Chicken",
+    "source": "https://en.wikipedia.org/wiki/Butter_chicken",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg/330px-Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chicken-biryani": {
+    "product": "Chicken Biryani",
+    "source": "https://en.wikipedia.org/wiki/Hyderabadi_biryani",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Hyderabadi_Chicken_Biryani.jpg/330px-Hyderabadi_Chicken_Biryani.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "tandoori-roti": {
+    "product": "Tandoori Roti",
+    "source": "https://en.wikipedia.org/wiki/Roti",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/2020-05-08_19_34_28_Chapati_being_made_in_a_pan_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg/330px-2020-05-08_19_34_28_Chapati_being_made_in_a_pan_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-thali": {
+    "product": "Veg Thali",
+    "source": "https://en.wikipedia.org/wiki/Thali",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Vegetarian_Curry.jpeg/330px-Vegetarian_Curry.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "gulab-jamun": {
+    "product": "Gulab Jamun",
+    "source": "https://en.wikipedia.org/wiki/Gulab_jamun",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Gulab-jamun-wallpaper-1.jpg/330px-Gulab-jamun-wallpaper-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "sweet-lassi": {
+    "product": "Sweet Lassi",
+    "source": "https://en.wikipedia.org/wiki/Lassi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Salt_lassi.jpg/330px-Salt_lassi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "bananas": {
+    "product": "Bananas",
+    "source": "https://en.wikipedia.org/wiki/Banana",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bananavarieties.jpg/330px-Bananavarieties.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "watermelon": {
+    "product": "Watermelon",
+    "source": "https://en.wikipedia.org/wiki/Watermelon",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg/330px-Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "oranges": {
+    "product": "Oranges",
+    "source": "https://en.wikipedia.org/wiki/Orange_(fruit)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/330px-Oranges_-_whole-halved-segment.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "apples": {
+    "product": "Apples",
+    "source": "https://en.wikipedia.org/wiki/Apple",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/330px-Pink_lady_and_cross_section.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "mangoes": {
+    "product": "Mangoes",
+    "source": "https://en.wikipedia.org/wiki/Mango",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Mangos_-_single_and_halved.jpg/330px-Mangos_-_single_and_halved.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "pomegranate": {
+    "product": "Pomegranate",
+    "source": "https://en.wikipedia.org/wiki/Pomegranate",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Pomegranate_Juice_%282019%29.jpg/330px-Pomegranate_Juice_%282019%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "grapes": {
+    "product": "Grapes",
+    "source": "https://en.wikipedia.org/wiki/Grape",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Grapes%2C_Rostov-on-Don%2C_Russia.jpg/330px-Grapes%2C_Rostov-on-Don%2C_Russia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "papaya": {
+    "product": "Papaya",
+    "source": "https://commons.wikimedia.org/wiki/File:03_Preparing_papaya_fruit_-_papaya_peeled_and_cut_in_half.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/03_Preparing_papaya_fruit_-_papaya_peeled_and_cut_in_half.jpg/960px-03_Preparing_papaya_fruit_-_papaya_peeled_and_cut_in_half.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "tomato": {
+    "product": "Tomato",
+    "source": "https://en.wikipedia.org/wiki/Tomato",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/330px-Tomato_je.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "green-beans": {
+    "product": "Green Beans",
+    "source": "https://en.wikipedia.org/wiki/Green_bean",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Heaps_of_beans.jpg/330px-Heaps_of_beans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "onion": {
+    "product": "Onion",
+    "source": "https://en.wikipedia.org/wiki/Onion",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Mixed_onions.jpg/330px-Mixed_onions.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "potato": {
+    "product": "Potato",
+    "source": "https://en.wikipedia.org/wiki/Potato",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Patates.jpg/330px-Patates.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cauliflower": {
+    "product": "Cauliflower",
+    "source": "https://en.wikipedia.org/wiki/Cauliflower",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Chou-fleur_02.jpg/330px-Chou-fleur_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "carrot": {
+    "product": "Carrot",
+    "source": "https://en.wikipedia.org/wiki/Carrot",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Vegetable-Carrot-Bundle-wStalks.jpg/330px-Vegetable-Carrot-Bundle-wStalks.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "capsicum": {
+    "product": "Capsicum",
+    "source": "https://en.wikipedia.org/wiki/Bell_pepper",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Green-Yellow-Red-Pepper-2009.jpg/330px-Green-Yellow-Red-Pepper-2009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "spinach": {
+    "product": "Spinach",
+    "source": "https://en.wikipedia.org/wiki/Spinach",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Spinacia_oleracea_Spinazie_bloeiend.jpg/330px-Spinacia_oleracea_Spinazie_bloeiend.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "broccoli": {
+    "product": "Broccoli",
+    "source": "https://en.wikipedia.org/wiki/Broccoli",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_and_cross_section_edit.jpg/330px-Broccoli_and_cross_section_edit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "coriander": {
+    "product": "Coriander",
+    "source": "https://commons.wikimedia.org/wiki/File:Bunches_of_coriander_leaves.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Bunches_of_coriander_leaves.jpg/960px-Bunches_of_coriander_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "toned-milk": {
+    "product": "Toned Milk",
+    "source": "https://en.wikipedia.org/wiki/Milk",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glass_of_Milk_%2833657535532%29.jpg/330px-Glass_of_Milk_%2833657535532%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "lemon": {
+    "product": "Lemon",
+    "source": "https://en.wikipedia.org/wiki/Lemon",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "curd": {
+    "product": "Curd",
+    "source": "https://en.wikipedia.org/wiki/Dahi_(curd)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Curd_in_a_traditional_Manipuri_earthen_pot.JPG/330px-Curd_in_a_traditional_Manipuri_earthen_pot.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "butter": {
+    "product": "Butter",
+    "source": "https://en.wikipedia.org/wiki/Butter",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/%C5%A0v%C3%A9dsk%C3%BD_kol%C3%A1%C4%8D_naruby_904_%28cropped%29.JPG/330px-%C5%A0v%C3%A9dsk%C3%BD_kol%C3%A1%C4%8D_naruby_904_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "paneer": {
+    "product": "Paneer",
+    "source": "https://en.wikipedia.org/wiki/Paneer",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Panir_Paneer_Indian_cheese_fresh.jpg/330px-Panir_Paneer_Indian_cheese_fresh.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cheese-slices": {
+    "product": "Cheese Slices",
+    "source": "https://en.wikipedia.org/wiki/Processed_cheese",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Eru_goudkuipje_sambal.jpg/330px-Eru_goudkuipje_sambal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "whole-wheat-atta": {
+    "product": "Whole Wheat Atta",
+    "source": "https://en.wikipedia.org/wiki/Atta_(flour)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Atta_flour.jpg/330px-Atta_flour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "eggs": {
+    "product": "Eggs",
+    "source": "https://en.wikipedia.org/wiki/Eggs_as_food",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Huevo_frito.jpg/330px-Huevo_frito.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "basmati-rice": {
+    "product": "Basmati Rice",
+    "source": "https://en.wikipedia.org/wiki/Basmati",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Khyma_and_Basmati_rice.jpg/330px-Khyma_and_Basmati_rice.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "toor-dal": {
+    "product": "Toor Dal",
+    "source": "https://commons.wikimedia.org/wiki/File:Straucherbsen_(Toor_Dal)_in_einem_indischen_Supermarkt.jpeg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Straucherbsen_%28Toor_Dal%29_in_einem_indischen_Supermarkt.jpeg/960px-Straucherbsen_%28Toor_Dal%29_in_einem_indischen_Supermarkt.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "salt": {
+    "product": "Salt",
+    "source": "https://en.wikipedia.org/wiki/Sea_salt",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Salt_Farmers_-_Pak_Thale-edit1.jpg/330px-Salt_Farmers_-_Pak_Thale-edit1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "tea-powder": {
+    "product": "Tea Powder",
+    "source": "https://en.wikipedia.org/wiki/Tea",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Longjing_tea_steeping_in_gaiwan.jpg/330px-Longjing_tea_steeping_in_gaiwan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "sugar": {
+    "product": "Sugar",
+    "source": "https://en.wikipedia.org/wiki/Sugar",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sucre_blanc_cassonade_complet_rapadura.jpg/330px-Sucre_blanc_cassonade_complet_rapadura.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "sunflower-oil": {
+    "product": "Sunflower Oil",
+    "source": "https://en.wikipedia.org/wiki/Sunflower_oil",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/OleicSunflowerOil.png/330px-OleicSunflowerOil.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "biscuits": {
+    "product": "Biscuits",
+    "source": "https://en.wikipedia.org/wiki/Biscuit",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bourbon_and_Custard_Cream.jpeg/330px-Bourbon_and_Custard_Cream.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "instant-coffee": {
+    "product": "Instant Coffee",
+    "source": "https://en.wikipedia.org/wiki/Instant_coffee",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Instant_coffee.jpg/330px-Instant_coffee.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "peanuts": {
+    "product": "Peanuts",
+    "source": "https://commons.wikimedia.org/wiki/File:Peanuts_in_a_bowl..jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Peanuts_in_a_bowl..jpg/960px-Peanuts_in_a_bowl..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cotton-wool": {
+    "product": "Cotton Wool",
+    "source": "https://en.wikipedia.org/wiki/Cotton_wool",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Vatta2.jpg/330px-Vatta2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "saree": {
+    "product": "Saree",
+    "source": "https://en.wikipedia.org/wiki/Sari",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sari_on_mannequin_for_demo.jpg/330px-Sari_on_mannequin_for_demo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "onion-rings": {
+    "product": "Onion Rings",
+    "source": "https://en.wikipedia.org/wiki/Onion_ring",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/OnionRings.JPG/330px-OnionRings.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-milkshake": {
+    "product": "Chocolate Milkshake",
+    "source": "https://en.wikipedia.org/wiki/Milkshake",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Strawberry_milk_shake_%28cropped%29.jpg/330px-Strawberry_milk_shake_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-hakka-noodles": {
+    "product": "Veg Hakka Noodles",
+    "source": "https://en.wikipedia.org/wiki/Indian_Chinese_cuisine",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/ChineseDishLogo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-manchurian": {
+    "product": "Veg Manchurian",
+    "source": "https://en.wikipedia.org/wiki/Manchurian_(dish)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Chicken_Manchurian_%28Hyderabad_Style%29_%2811960049916%29.jpg/330px-Chicken_Manchurian_%28Hyderabad_Style%29_%2811960049916%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chilli-paneer": {
+    "product": "Chilli Paneer",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_made_Paneer_Chilli.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Home_made_Paneer_Chilli.jpg/960px-Home_made_Paneer_Chilli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "spring-rolls": {
+    "product": "Spring Rolls",
+    "source": "https://en.wikipedia.org/wiki/Spring_roll",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Spring_Rolls_%283357696061%29.jpg/330px-Spring_Rolls_%283357696061%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-momos": {
+    "product": "Veg Momos",
+    "source": "https://en.wikipedia.org/wiki/Momo_(food)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/330px-Momo_nepal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "hot-and-sour-soup": {
+    "product": "Hot and Sour Soup",
+    "source": "https://en.wikipedia.org/wiki/Hot_and_sour_soup",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Ping_SJ_hot_%26_sour_soup.JPG/330px-Ping_SJ_hot_%26_sour_soup.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cold-coffee": {
+    "product": "Cold Coffee",
+    "source": "https://en.wikipedia.org/wiki/Iced_coffee",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Affogato_al_Caffe.jpg/330px-Affogato_al_Caffe.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "green-tea": {
+    "product": "Green Tea",
+    "source": "https://en.wikipedia.org/wiki/Green_tea",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Green_tea_3_appearances.jpg/330px-Green_tea_3_appearances.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "masala-chai": {
+    "product": "Masala Chai",
+    "source": "https://en.wikipedia.org/wiki/Masala_chai",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Chai_In_Sakora.jpg/330px-Chai_In_Sakora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "blueberry-muffin": {
+    "product": "Blueberry Muffin",
+    "source": "https://en.wikipedia.org/wiki/Muffin",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/NCI_Visuals_Food_Muffins.jpg/330px-NCI_Visuals_Food_Muffins.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "croissant": {
+    "product": "Croissant",
+    "source": "https://en.wikipedia.org/wiki/Croissant",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Croissant-Petr_Kratochvil.jpg/330px-Croissant-Petr_Kratochvil.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "white-bread": {
+    "product": "White Bread",
+    "source": "https://en.wikipedia.org/wiki/White_bread",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Wei%C3%9Fbrot-1.jpg/330px-Wei%C3%9Fbrot-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-puff": {
+    "product": "Veg Puff",
+    "source": "https://en.wikipedia.org/wiki/Jamaican_patty",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Jamaican_patties_and_redstripe.jpg/330px-Jamaican_patties_and_redstripe.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "vada-pav": {
+    "product": "Vada Pav",
+    "source": "https://en.wikipedia.org/wiki/Vada_pav",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vada_Pav-Indian_street_food.JPG/330px-Vada_Pav-Indian_street_food.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "samosa": {
+    "product": "Samosa",
+    "source": "https://en.wikipedia.org/wiki/Samosa",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Samosas%2C_snack_food_at_Wikipedia%27s_16th_Birthday_celebration_in_Chittagong_%2801%29.jpg/330px-Samosas%2C_snack_food_at_Wikipedia%27s_16th_Birthday_celebration_in_Chittagong_%2801%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "pav-bhaji": {
+    "product": "Pav Bhaji",
+    "source": "https://en.wikipedia.org/wiki/Pav_bhaji",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bambayya_Pav_bhaji.jpg/330px-Bambayya_Pav_bhaji.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "misal-pav": {
+    "product": "Misal Pav",
+    "source": "https://en.wikipedia.org/wiki/Misal_pav",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Kolhapuri_Misal_Pav.jpg/330px-Kolhapuri_Misal_Pav.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "idli-sambar": {
+    "product": "Idli Sambar",
+    "source": "https://en.wikipedia.org/wiki/Idli",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Idli_Sambar.JPG/330px-Idli_Sambar.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "masala-dosa": {
+    "product": "Masala Dosa",
+    "source": "https://en.wikipedia.org/wiki/Masala_dosa",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Masala_Dosa_2023.jpg/330px-Masala_Dosa_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cutting-chai": {
+    "product": "Cutting Chai",
+    "source": "https://en.wikipedia.org/wiki/Masala_chai",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Chai_In_Sakora.jpg/330px-Chai_In_Sakora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "paneer-butter-masala": {
+    "product": "Paneer Butter Masala",
+    "source": "https://en.wikipedia.org/wiki/Paneer_makhani",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Paneer_Makhani_Veggie.jpeg/330px-Paneer_Makhani_Veggie.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "butter-naan": {
+    "product": "Butter Naan",
+    "source": "https://en.wikipedia.org/wiki/Naan",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Annapurna_Naan.jpg/330px-Annapurna_Naan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "jeera-rice": {
+    "product": "Jeera Rice",
+    "source": "https://en.wikipedia.org/wiki/Jeera_bhaat",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Jeera-rice.JPG/330px-Jeera-rice.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "vanilla-ice-cream": {
+    "product": "Vanilla Ice Cream",
+    "source": "https://en.wikipedia.org/wiki/Vanilla_ice_cream",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg/330px-Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-ice-cream": {
+    "product": "Chocolate Ice Cream",
+    "source": "https://en.wikipedia.org/wiki/Chocolate_ice_cream",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ice_cream_cone_%28cropped%29.jpg/330px-Ice_cream_cone_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "chocolate-sundae": {
+    "product": "Chocolate Sundae",
+    "source": "https://en.wikipedia.org/wiki/Sundae",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/StrawberrySundae.jpg/330px-StrawberrySundae.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "strawberry-ice-cream": {
+    "product": "Strawberry Ice Cream",
+    "source": "https://en.wikipedia.org/wiki/Strawberry_ice_cream",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Strawberry_ice_cream_cone_%285076899310%29.jpg/330px-Strawberry_ice_cream_cone_%285076899310%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "falooda": {
+    "product": "Falooda",
+    "source": "https://en.wikipedia.org/wiki/Falooda",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Faluda.JPG/330px-Faluda.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "mango-kulfi": {
+    "product": "Mango Kulfi",
+    "source": "https://en.wikipedia.org/wiki/Kulfi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Matka_kulfi.jpg/330px-Matka_kulfi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "potato-chips": {
+    "product": "Potato Chips",
+    "source": "https://en.wikipedia.org/wiki/Potato_chips",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Potato-Chips.jpg/330px-Potato-Chips.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "instant-noodles": {
+    "product": "Instant Noodles",
+    "source": "https://en.wikipedia.org/wiki/Instant_noodles",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Mama_instant_noodle_block.jpg/330px-Mama_instant_noodle_block.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "orange-juice": {
+    "product": "Orange Juice",
+    "source": "https://en.wikipedia.org/wiki/Orange_juice",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Orangejuice.jpg/330px-Orangejuice.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "mineral-water": {
+    "product": "Mineral Water",
+    "source": "https://en.wikipedia.org/wiki/Bottled_water",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Water_Bottle_%2851308317077%29.jpg/330px-Water_Bottle_%2851308317077%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "detergent-powder": {
+    "product": "Detergent Powder",
+    "source": "https://commons.wikimedia.org/wiki/File:Plastic_spoon_n_Laundry_detergent_n_Washing_powder_in_white.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Plastic_spoon_n_Laundry_detergent_n_Washing_powder_in_white.jpg/960px-Plastic_spoon_n_Laundry_detergent_n_Washing_powder_in_white.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "bath-soap": {
+    "product": "Bath Soap",
+    "source": "https://en.wikipedia.org/wiki/Soap",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Handmade_soap_cropped_and_simplified.jpg/330px-Handmade_soap_cropped_and_simplified.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "dishwash-bar": {
+    "product": "Dishwash Bar",
+    "source": "https://en.wikipedia.org/wiki/Dishwashing_liquid",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Afwasmiddel.jpg/330px-Afwasmiddel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "paracetamol-650": {
+    "product": "Paracetamol 650",
+    "source": "https://commons.wikimedia.org/wiki/File:Tylenol_paracetamol_sustained_release_tablets,_Chinese_version_(20221212120513).jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Tylenol_paracetamol_sustained_release_tablets%2C_Chinese_version_%2820221212120513%29.jpg/960px-Tylenol_paracetamol_sustained_release_tablets%2C_Chinese_version_%2820221212120513%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "toothpaste": {
+    "product": "Toothpaste",
+    "source": "https://en.wikipedia.org/wiki/Toothpaste",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Toothpasteonbrush.jpg/330px-Toothpasteonbrush.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cough-syrup": {
+    "product": "Cough Syrup",
+    "source": "https://en.wikipedia.org/wiki/Cold_medicine",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Cough_medicine.jpg/330px-Cough_medicine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "ors-sachets": {
+    "product": "ORS Sachets",
+    "source": "https://en.wikipedia.org/wiki/Oral_rehydration_therapy",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Oral_rehydration_solution.xcf/330px-Oral_rehydration_solution.xcf.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "vitamin-c-tablets": {
+    "product": "Vitamin C Tablets",
+    "source": "https://commons.wikimedia.org/wiki/File:Effervescent_tablet_of_vitamin_C_in_glass.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Effervescent_tablet_of_vitamin_C_in_glass.jpg/960px-Effervescent_tablet_of_vitamin_C_in_glass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "antiseptic-liquid": {
+    "product": "Antiseptic Liquid",
+    "source": "https://en.wikipedia.org/wiki/Antiseptic",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Peroxid_vod%C3%ADku.jpg/330px-Peroxid_vod%C3%ADku.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "adhesive-bandages": {
+    "product": "Adhesive Bandages",
+    "source": "https://en.wikipedia.org/wiki/Adhesive_bandage",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Sparadrap_2.jpg/330px-Sparadrap_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "face-masks": {
+    "product": "Face Masks",
+    "source": "https://en.wikipedia.org/wiki/Surgical_mask",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Surgical_face_mask.jpg/330px-Surgical_face_mask.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "long-notebook": {
+    "product": "Long Notebook",
+    "source": "https://en.wikipedia.org/wiki/Notebook",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Notebooks.jpg/330px-Notebooks.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "gel-pens": {
+    "product": "Gel Pens",
+    "source": "https://en.wikipedia.org/wiki/Gel_pen",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Gelpen_cylindric_tip_detail.jpg/330px-Gelpen_cylindric_tip_detail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "pencils": {
+    "product": "Pencils",
+    "source": "https://en.wikipedia.org/wiki/Pencil",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Pencils_hb.jpg/330px-Pencils_hb.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "a4-paper": {
+    "product": "A4 Paper",
+    "source": "https://commons.wikimedia.org/wiki/File:1990s_Rank_Xerox_A4_75gsm_copier_paper_cardboard_box_and_A4_paper_made_in_Sweden.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/1990s_Rank_Xerox_A4_75gsm_copier_paper_cardboard_box_and_A4_paper_made_in_Sweden.jpg/960px-1990s_Rank_Xerox_A4_75gsm_copier_paper_cardboard_box_and_A4_paper_made_in_Sweden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "geometry-box": {
+    "product": "Geometry Box",
+    "source": "https://en.wikipedia.org/wiki/Compass_(drawing_tool)",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Zirkel.jpg/330px-Zirkel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "sticky-notes": {
+    "product": "Sticky Notes",
+    "source": "https://commons.wikimedia.org/wiki/File:Sticky_Note_on_a_white_background.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sticky_Note_on_a_white_background.jpg/960px-Sticky_Note_on_a_white_background.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "scissors": {
+    "product": "Scissors",
+    "source": "https://en.wikipedia.org/wiki/Scissors",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Standard_household_scissors.jpg/330px-Standard_household_scissors.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "usb-c-cable": {
+    "product": "USB-C Cable",
+    "source": "https://en.wikipedia.org/wiki/USB-C",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/USB-C_plug%2C_focus_stacked.jpg/330px-USB-C_plug%2C_focus_stacked.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "glue-stick": {
+    "product": "Glue Stick",
+    "source": "https://en.wikipedia.org/wiki/Glue_stick",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Pritt_Sticks.JPG/330px-Pritt_Sticks.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "wired-earphones": {
+    "product": "Wired Earphones",
+    "source": "https://en.wikipedia.org/wiki/Headphones",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/S%C5%82uchawki_referencyjne_K-701_firmy_AKG.jpg/330px-S%C5%82uchawki_referencyjne_K-701_firmy_AKG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "20w-fast-charger": {
+    "product": "20W Fast Charger",
+    "source": "https://commons.wikimedia.org/wiki/File:USB_power_adapter_for_Apple_iPod,_Model_A1205,_by_Foxlink_Technology_Ltd-1048.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/USB_power_adapter_for_Apple_iPod%2C_Model_A1205%2C_by_Foxlink_Technology_Ltd-1048.jpg/960px-USB_power_adapter_for_Apple_iPod%2C_Model_A1205%2C_by_Foxlink_Technology_Ltd-1048.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "power-bank": {
+    "product": "Power Bank",
+    "source": "https://commons.wikimedia.org/wiki/File:Power_bank.JPG",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Power_bank.JPG/960px-Power_bank.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "bluetooth-speaker": {
+    "product": "Bluetooth Speaker",
+    "source": "https://en.wikipedia.org/wiki/Wireless_speaker",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/JBL_Flip_3_bluetooth_speaker_%28DSCF2653%29.jpg/330px-JBL_Flip_3_bluetooth_speaker_%28DSCF2653%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "wireless-mouse": {
+    "product": "Wireless Mouse",
+    "source": "https://en.wikipedia.org/wiki/Computer_mouse",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/3-Tasten-Maus_Microsoft.jpg/330px-3-Tasten-Maus_Microsoft.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "keyboard": {
+    "product": "Keyboard",
+    "source": "https://en.wikipedia.org/wiki/Computer_keyboard",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Typing_example.ogv/330px--Typing_example.ogv.jpg",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "aa-batteries": {
+    "product": "AA Batteries",
+    "source": "https://en.wikipedia.org/wiki/AA_battery",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/AA_matchstick-1.jpg/330px-AA_matchstick-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cotton-t-shirt": {
+    "product": "Cotton T-Shirt",
+    "source": "https://en.wikipedia.org/wiki/T-shirt",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Woman_in_a_V-Neck_T-Shirt.jpg/330px-Woman_in_a_V-Neck_T-Shirt.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "led-bulb": {
+    "product": "LED Bulb",
+    "source": "https://en.wikipedia.org/wiki/LED_lamp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Led-lampa.jpg/330px-Led-lampa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "hoodie": {
+    "product": "Hoodie",
+    "source": "https://en.wikipedia.org/wiki/Hoodie",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Marvin_Jones_2019_%28cropped%29.jpg/330px-Marvin_Jones_2019_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "slim-fit-jeans": {
+    "product": "Slim Fit Jeans",
+    "source": "https://en.wikipedia.org/wiki/Jeans",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Jeans.jpg/330px-Jeans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "cotton-kurta": {
+    "product": "Cotton Kurta",
+    "source": "https://en.wikipedia.org/wiki/Kurta",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Kurta_traditional_front_sandalwood_buttons.jpg/330px-Kurta_traditional_front_sandalwood_buttons.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "ankle-socks": {
+    "product": "Ankle Socks",
+    "source": "https://en.wikipedia.org/wiki/Sock",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/HandKnittedWhiteLaceSock.jpg/330px-HandKnittedWhiteLaceSock.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "baseball-cap": {
+    "product": "Baseball Cap",
+    "source": "https://en.wikipedia.org/wiki/Baseball_cap",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Basecap_New_York_Yankees.jpg/330px-Basecap_New_York_Yankees.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "sneakers": {
+    "product": "Sneakers",
+    "source": "https://en.wikipedia.org/wiki/Sneakers",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Jordan_1_Banned.jpg/330px-Air_Jordan_1_Banned.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "flip-flops": {
+    "product": "Flip Flops",
+    "source": "https://en.wikipedia.org/wiki/Flip-flops",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Flip_flops.jpg/330px-Flip_flops.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "pasta-arrabbiata": {
+    "product": "Pasta Arrabbiata",
+    "source": "https://en.wikipedia.org/wiki/Arrabbiata_sauce",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Penne_Arrabbiata.jpg/330px-Penne_Arrabbiata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "veg-club-sandwich": {
+    "product": "Veg Club Sandwich",
+    "source": "https://en.wikipedia.org/wiki/Club_sandwich",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Club_sandwich_at_Caf%C3%A9_Picnic.jpg/330px-Club_sandwich_at_Caf%C3%A9_Picnic.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "medu-vada": {
+    "product": "Medu Vada",
+    "source": "https://en.wikipedia.org/wiki/Medu_vada",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Medu_Vada.JPG/330px-Medu_Vada.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "poha": {
+    "product": "Poha",
+    "source": "https://en.wikipedia.org/wiki/Flattened_rice",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Poha.jpg/330px-Poha.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "hand-sanitizer": {
+    "product": "Hand Sanitizer",
+    "source": "https://en.wikipedia.org/wiki/Hand_sanitizer",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/COVID-19_au_B%C3%A9nin_flacons_de_gel_hydroalcoolique_sur_une_table1.jpg/330px-COVID-19_au_B%C3%A9nin_flacons_de_gel_hydroalcoolique_sur_une_table1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "digital-thermometer": {
+    "product": "Digital Thermometer",
+    "source": "https://en.wikipedia.org/wiki/Thermometer",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Mercury_Thermometer.jpg/330px-Mercury_Thermometer.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "highlighters": {
+    "product": "Highlighters",
+    "source": "https://en.wikipedia.org/wiki/Marker_pen",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Felt_Tip.jpg/330px-Felt_Tip.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "stapler": {
+    "product": "Stapler",
+    "source": "https://en.wikipedia.org/wiki/Stapler",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/2017_Zszywacz_biurowy.jpg/330px-2017_Zszywacz_biurowy.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "extension-board": {
+    "product": "Extension Board",
+    "source": "https://en.wikipedia.org/wiki/Power_strip",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tricklestar_Plug_Strip.jpg/330px-Tricklestar_Plug_Strip.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  },
+  "envelopes": {
+    "product": "Envelopes",
+    "source": "https://en.wikipedia.org/wiki/Envelope",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Envelope_-_Boonville_Address-000.jpg/330px-Envelope_-_Boonville_Address-000.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "license": "See the image page on Wikimedia Commons"
+  }
+}

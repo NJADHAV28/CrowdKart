@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fx_pizza",
+    "source": "fixture",
+    "name": "Corner Pizza",
+    "category": "food",
+    "cuisine": "pizza",
+    "location": [
+      16.8489,
+      74.6041
+    ],
+    "address": "College Rd"
+  },
+  {
+    "id": "fx_burger",
+    "source": "fixture",
+    "name": "Burger Point",
+    "category": "food",
+    "cuisine": "burger",
+    "location": [
+      16.8501,
+      74.6015
+    ],
+    "address": "Station Rd"
+  },
+  {
+    "id": "fx_grocery",
+    "source": "fixture",
+    "name": "Daily Needs Mart",
+    "category": "grocery",
+    "cuisine": "",
+    "location": [
+      16.8511,
+      74.6062
+    ],
+    "address": "Main Rd"
+  },
+  {
+    "id": "fx_snacks",
+    "source": "fixture",
+    "name": "Misal House",
+    "category": "food",
+    "cuisine": "regional",
+    "location": [
+      16.8447,
+      74.5968
+    ],
+    "address": ""
+  },
+  {
+    "id": "fx_stationery",
+    "source": "fixture",
+    "name": "Student Stationers",
+    "category": "stationery",
+    "cuisine": "",
+    "location": [
+      16.8433,
+      74.599
+    ],
+    "address": ""
+  },
+  {
+    "id": "fx_hotel",
+    "source": "fixture",
+    "name": "Hotel Sunrise Residency",
+    "category": "hotel",
+    "cuisine": "",
+    "location": [
+      16.852,
+      74.608
+    ],
+    "address": "Station Rd"
+  }
+]

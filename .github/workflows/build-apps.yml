@@ -1,0 +1,90 @@
+# Builds CrowdKart for every platform: Windows, macOS, Linux (Electron), Android (APK) and iOS (simulator .app).
+# Artifacts are attached to each workflow run. Trigger manually or by pushing a tag like v1.0.0.
+name: Build CrowdKart apps
+
+on:
+  workflow_dispatch:
+    inputs:
+      server_url:
+        description: "Hosted CrowdKart server URL baked into the mobile apps (e.g. https://crowdkart.onrender.com)"
+        required: false
+  push:
+    tags: ["v*"]
+
+env:
+  VITE_API_URL: ${{ github.event.inputs.server_url }}
+
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: dist:win
+          - os: macos-latest
+            target: dist:mac
+          - os: ubuntu-latest
+            target: dist:linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci || npm install
+      - run: npm run build -w client
+        env: { VITE_API_URL: "" } # desktop serves the client from its embedded server
+      - run: npm run ${{ matrix.target }} -w desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crowdkart-desktop-${{ matrix.os }}
+          path: |
+            desktop/release/*.exe
+            desktop/release/*.dmg
+            desktop/release/*.zip
+            desktop/release/*.AppImage
+            desktop/release/*.deb
+
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - uses: android-actions/setup-android@v3
+      - run: npm ci || npm install
+      - run: npm run build -w client
+      - run: npx cap sync android
+        working-directory: client
+      - run: chmod +x gradlew && ./gradlew assembleDebug
+        working-directory: client/android
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crowdkart-android-apk
+          path: client/android/app/build/outputs/apk/debug/*.apk
+
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci || npm install
+      - run: npm run build -w client
+      - run: npx cap sync ios
+        working-directory: client
+      - name: Build for iOS Simulator (unsigned)
+        working-directory: client/ios/App
+        run: |
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug \
+            -sdk iphonesimulator -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+      - run: cd client/ios/App/build/Build/Products/Debug-iphonesimulator && zip -r CrowdKart-ios-simulator.zip App.app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crowdkart-ios-simulator
+          path: client/ios/App/build/Build/Products/Debug-iphonesimulator/CrowdKart-ios-simulator.zip

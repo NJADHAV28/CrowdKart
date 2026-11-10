@@ -1,0 +1,75 @@
+{
+  "name": "@crowdkart/desktop",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "description": "CrowdKart desktop app (Windows, macOS, Linux)",
+  "author": "CrowdKart Team",
+  "homepage": "https://crowdkart.app",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "prepare-app": "node prepare.cjs",
+    "dist": "node prepare.cjs && electron-builder --publish never",
+    "dist:win": "node prepare.cjs && electron-builder --win --publish never",
+    "dist:mac": "node prepare.cjs && electron-builder --mac --publish never",
+    "dist:linux": "node prepare.cjs && electron-builder --linux --publish never"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "app.crowdkart.desktop",
+    "productName": "CrowdKart",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "icon.png",
+      "app-server/**",
+      "app-client/**"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.shopping",
+      "icon": "icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office",
+      "icon": "icon.png",
+      "maintainer": "CrowdKart Team <team@crowdkart.app>"
+    },
+    "electronVersion": "33.4.11",
+    "npmRebuild": false,
+    "electronDist": "../node_modules/electron/dist"
+  }
+}
