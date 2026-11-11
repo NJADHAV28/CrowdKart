@@ -1,11 +1,11 @@
-# One-click hosting on Render (https://render.com): New → Blueprint → select this repo.
+
 services:
   - type: web
     name: crowdkart
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: cd client && npm install && npm run build && cd ../server && npm install
+    startCommand: cd server && npm start
     healthCheckPath: /api/health
     envVars:
       - key: JWT_SECRET
