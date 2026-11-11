@@ -56,6 +56,12 @@ export const config = {
   // Promo codes, e.g. PROMO_CODES=WELCOME10:10,CROWD15:15  (percent off item total)
   promoCodes: Object.fromEntries((process.env.PROMO_CODES || '').split(',').map((x) => x.trim().split(':')).filter(([c, p]) => c && Number(p) > 0 && Number(p) <= 50).map(([c, p]) => [c.toUpperCase(), Number(p)])),
 
+  // Admin panel sign-in. Set these in server/.env (never commit real passwords).
+  admin: {
+    username: process.env.ADMIN_USERNAME || 'admin',
+    password: process.env.ADMIN_PASSWORD || '',
+  },
+
   matching: {
     threshold: Number(process.env.MATCH_THRESHOLD || 60),
     groupWindowMin: Number(process.env.GROUP_WINDOW_MIN || 10),

@@ -27,6 +27,7 @@ const Favorites = lazy(() => import('./pages/Favorites.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
 const Merchant = lazy(() => import('./pages/Merchant.jsx'));
 const Rider = lazy(() => import('./pages/Rider.jsx'));
+const Admin = lazy(() => import('./pages/Admin.jsx'));
 const LocationPicker = lazy(() => import('./components/LocationPicker.jsx'));
 
 const Ctx = createContext(null);
@@ -101,6 +102,7 @@ function Shell() {
   if (!user) return <Routes><Route path="*" element={<Login />} /></Routes>;
   const merchant = user.role === 'merchant';
   const rider = user.role === 'rider';
+  if (user.role === 'admin') return <Suspense fallback={<PageSpinner />}><Admin /></Suspense>;
   const focused = pathname.startsWith('/p/') || ['/checkout', '/cart'].includes(pathname); // no tab bar / cart bar
   const withHeader = !merchant && !rider && !pathname.startsWith('/p/') && pathname !== '/checkout';
 

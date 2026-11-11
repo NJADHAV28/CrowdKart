@@ -31,7 +31,6 @@ export default function Group() {
   const [g, setG] = useState(null);
   const [note, setNote] = useState('');
   const [liveRiders, setLiveRiders] = useState(null);
-  const [scope, setScope] = useState('mine');
   const [busy, setBusy] = useState(false);
   const [route, setRoute] = useState(null);
 
@@ -77,7 +76,7 @@ export default function Group() {
 
   let title, subtitle;
   if (g.status === 'open') { title = others ? `Grouped with ${others} ${others === 1 ? 'neighbour' : 'neighbours'}` : 'Looking for neighbours nearby'; subtitle = 'Payment opens when the group closes. In a hurry? Checkout now.'; }
-  else if (g.status === 'awaiting_payment') { title = g.me.pay === 'pending' ? 'Ready to pay' : 'Waiting for neighbours to pay'; subtitle = g.me.pay === 'pending' ? 'Pay by UPI, card or wallet to confirm.' : `${g.paidCount} of ${g.participants} paid. The rider leaves once everyone has paid.`; }
+  else if (g.status === 'awaiting_payment') { title = g.me.pay === 'pending' ? 'Ready to pay' : 'Waiting for neighbours to pay'; subtitle = g.me.pay === 'pending' ? (g.upi?.status === 'submitted' ? 'Confirming your UPI payment…' : 'Pay by UPI, card or wallet to confirm your order.') : `${g.paidCount} of ${g.participants} paid. The rider leaves once everyone has paid.`; }
   else if (deliveredToMe) { title = 'Delivered'; subtitle = 'Enjoy! Thanks for sharing the ride.'; }
   else if (progress) { title = `Arriving in ${progress.minutes} min`; subtitle = progress.text; }
   else { title = 'Order confirmed'; subtitle = 'Assigning a rider…'; }
@@ -120,17 +119,8 @@ export default function Group() {
 
       {g.status === 'awaiting_payment' && g.me.pay === 'pending' && (
         <div className="card mt-4 p-5">
-          {g.participants > 1 && (
-            <>
-              <h2 className="mb-3 font-semibold">Who’s paying?</h2>
-              <div className="space-y-2">
-                <PayOption checked={scope === 'mine'} onChange={() => setScope('mine')} title="Pay for my order" amount={b.total} desc="Everyone pays their own share." />
-                <PayOption checked={scope === 'group'} onChange={() => setScope('group')} title="Pay for everyone" amount={g.pendingTotal} desc={`Covers all ${g.participants - g.paidCount} unpaid orders in one go.`} />
-              </div>
-            </>
-          )}
-          <h2 className={`${g.participants > 1 ? 'mt-5' : ''} mb-3 font-semibold`}>Payment method</h2>
-          <PayButton key={scope} groupId={g.id} scope={scope} amountInr={scope === 'group' ? g.pendingTotal : b.total} onPaid={load} />
+          <h2 className="mb-3 font-semibold">Payment method</h2>
+          <PayButton groupId={g.id} amountInr={b.total} onPaid={load} upiPayment={g.upi} />
         </div>
       )}
       {g.status === 'awaiting_payment' && g.me.pay !== 'pending' && (
@@ -178,17 +168,5 @@ export default function Group() {
         </div>
       )}
     </div>
-  );
-}
-
-function PayOption({ checked, onChange, title, amount, desc }) {
-  return (
-    <label className={`flex cursor-pointer gap-3 rounded-xl border p-3 ${checked ? 'border-brand bg-brand-soft/60' : 'border-line hover:bg-page'}`}>
-      <input type="radio" className="mt-1 accent-[#2fa866]" checked={checked} onChange={onChange} />
-      <span className="min-w-0 flex-1">
-        <span className="flex justify-between gap-3 text-sm font-semibold"><span>{title}</span><span className="tnum">{inr(amount)}</span></span>
-        <span className="block text-xs text-sub">{desc}</span>
-      </span>
-    </label>
   );
 }

@@ -10,6 +10,7 @@ import { approx, cellOf, cellCenter, cellsAround, haversineKm } from './geo.js';
 import * as paypal from './paypal.js';
 import { startDelivery } from './delivery.js';
 import { routeGeometry } from './route.js';
+import { getSettings, upiUri } from './settings.js';
 
 let io = null;
 export const setIO = (x) => { io = x; };
@@ -90,7 +91,7 @@ export function createOrderIntent(user, { merchantId, items, windowMin = 15, pre
   else {
     group = col('groups').insert({
       id: id('grp'), anchor: signal.approx, area: user.area || 'Your area', status: 'open', createdAt: t,
-      closesAt: t + config.matching.groupWindowMin * 60000, windowMin: win, members: [], plan: null, bills: null,
+      closesAt: t + (getSettings().waitMinutes || config.matching.groupWindowMin) * 60000, windowMin: win, members: [], plan: null, bills: null,
     });
   }
   const sameUser = group.members.find((m) => userOf(m) === user.id); // keep one nickname per person
@@ -156,18 +157,29 @@ export async function createPayment(g, user, scope, method = 'razorpay') {
   const me = mine[0];
   if (!me) throw httpError(403, 'Not part of this order');
   if (g.status !== 'awaiting_payment') throw httpError(409, 'This order isn’t ready for payment yet');
-  if (!['mine', 'group'].includes(scope)) throw httpError(400, 'Choose how to pay');
+  if (scope !== 'mine') throw httpError(400, 'Each person pays for their own order');
   const pending = g.members.filter((m) => m.pay === 'pending');
   const myPending = mine.filter((m) => m.pay === 'pending');
   if (scope === 'mine' && !myPending.length) throw httpError(409, 'You’ve already paid');
   const covers = scope === 'group' ? pending.map((m) => m.memberId) : myPending.map((m) => m.memberId);
   if (!covers.length) throw httpError(409, 'Nothing left to pay');
   const amount = covers.reduce((s, mid) => s + g.bills[mid].total, 0);
+  if (method === 'upi') {
+    const open = col('payments').findOne((x) => x.provider === 'upi' && x.groupId === g.id && x.userId === user.id && x.status === 'created' && x.amountInr === amount);
+    if (open) return publicPayment(open);
+  }
 
   const pay = {
     id: id('pay'), groupId: g.id, payerMemberId: me.memberId, userId: user.id, scope, covers,
-    amountInr: amount, provider: pickProvider(method), status: 'created', createdAt: now(),
+    amountInr: amount, provider: method === 'upi' ? 'upi' : pickProvider(method), status: 'created', createdAt: now(),
   };
+  if (pay.provider === 'upi') {
+    // Direct UPI to the admin's UPI ID: opens the customer's UPI app; confirmed by the admin via the UTR.
+    if (!getSettings().upiId) throw httpError(400, 'UPI payments aren’t set up yet');
+    const ref = pay.id.slice(4, 12).toUpperCase();
+    pay.upiRef = ref;
+    pay.upiUri = upiUri({ amountInr: amount, ref });
+  }
   pay.currency = pay.provider === 'paypal' ? config.paypal.currency : 'INR';
   pay.chargeAmount = pay.provider === 'paypal' ? paypal.toChargeAmount(amount) : amount.toFixed(2);
   if (pay.provider === 'razorpay') {
@@ -190,12 +202,14 @@ function pickProvider(method) {
 const publicPayment = (p) => ({
   id: p.id, provider: p.provider, status: p.status, amountInr: p.amountInr, scope: p.scope, covers: p.covers.length,
   paypalOrderId: p.paypalOrderId, razorpayOrderId: p.razorpayOrderId, razorpayKeyId: p.provider === 'razorpay' ? config.razorpay.keyId : undefined,
+  upiUri: p.upiUri, upiRef: p.upiRef, upiId: p.provider === 'upi' ? getSettings().upiId : undefined, payeeName: p.provider === 'upi' ? getSettings().payeeName : undefined,
 });
 
 export async function capturePayment(user, paymentId, proof = {}) {
   const p = col('payments').get(paymentId);
   if (!p || p.userId !== user.id) throw httpError(404, 'Payment not found');
   if (p.status === 'captured') return publicPayment(p);
+  if (p.provider === 'upi') throw httpError(403, 'UPI payments are confirmed by the admin after checking the transaction');
   if (p.provider === 'razorpay') {
     const ok = razorpay.verifyPayment({ orderId: p.razorpayOrderId, paymentId: proof.razorpay_payment_id, signature: proof.razorpay_signature });
     if (!ok || proof.razorpay_order_id !== p.razorpayOrderId) throw httpError(400, 'We couldn’t verify this payment. If money was deducted it will be refunded automatically.');
@@ -208,6 +222,21 @@ export async function capturePayment(user, paymentId, proof = {}) {
   }
   markCaptured(p);
   return publicPayment(p);
+}
+
+/** Customer says they've paid by UPI: store the 12-digit UTR for the admin to verify. */
+export function submitUpi(user, paymentId, utr) {
+  const p = col('payments').get(paymentId);
+  if (!p || p.userId !== user.id || p.provider !== 'upi') throw httpError(404, 'Payment not found');
+  if (p.status === 'captured') return publicPayment(p);
+  const clean = String(utr || '').replace(/\s/g, '');
+  if (!/^\d{12}$/.test(clean)) throw httpError(400, 'Enter the 12-digit UPI transaction ID (UTR) from your UPI app');
+  if (col('payments').findOne((x) => x.utr === clean && x.id !== p.id)) throw httpError(409, 'This transaction ID was already used');
+  col('payments').update(p.id, { status: 'submitted', utr: clean, submittedAt: now() });
+  const g = col('groups').get(p.groupId);
+  if (g) emitGroup(g);
+  io?.emit('admin:update');
+  return publicPayment(col('payments').get(p.id));
 }
 
 export function markCaptured(p) {
@@ -292,6 +321,11 @@ export function groupView(g, user) {
     paidCount: users.filter(userPaid).length,
     pendingTotal: g.status === 'awaiting_payment' ? pending.reduce((s, m) => s + live.bills[m.memberId].total, 0) : null,
     paidByMe: Boolean(g.paidBy && mine.some((m) => m.memberId === g.paidBy)),
+    upi: (() => {
+      const mineIds = new Set(mine.map((m) => m.memberId));
+      const p = col('payments').find((x) => x.groupId === g.id && x.provider === 'upi' && x.covers.some((c) => mineIds.has(c))).sort((x, y) => y.createdAt - x.createdAt)[0];
+      return p ? { id: p.id, status: p.status, utr: p.utr || null, note: p.adminNote || null } : null;
+    })(),
     me: {
       alias: mine[0].alias,
       pay: myPay,

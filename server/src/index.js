@@ -19,6 +19,8 @@ import { buildMenu, CATALOG_VERSION } from './catalog.js';
 import compression from 'compression';
 import * as geocode from './geocode.js';
 import * as G from './groups.js';
+import * as Admin from './admin.js';
+import { getSettings, updateSettings } from './settings.js';
 import { searchBrands, getBrand, nearestShopFor } from './brands.js';
 
 load();
@@ -81,6 +83,7 @@ app.get('/api/config', (req, res) => res.json({
     razorpay: razorpayEnabled(),
     paypal: paypalEnabled() ? { clientId: config.paypal.clientId, currency: config.paypal.currency, inrPerUnit: config.paypal.inrPerUnit } : null,
     testMode: !razorpayEnabled() && !paypalEnabled(),
+    upi: getSettings().upiId ? { vpa: getSettings().upiId, name: getSettings().payeeName } : null,
   },
   deliveryRadiusKm: config.places.radiusKm,
   cartMaxItems: config.cartMaxItems,
@@ -270,6 +273,8 @@ app.post('/api/checkout', auth, wrap(async (req) => {
     groupId = groupId || r.groupId;
     placed.push(r);
   }
+  // Pay straight away unless the admin set a wait-for-neighbours time
+  if (!getSettings().waitMinutes) G.lockGroup(col('groups').get(groupId));
   return { groupId, orders: placed.length, joinedExisting: placed[0].joinedExisting, alias: placed[0].alias };
 }));
 
@@ -311,6 +316,7 @@ app.post('/api/payments', auth, wrap((req) => {
   if (!g) throw G.httpError(404, 'Order not found');
   return G.createPayment(g, req.user, req.body?.scope, req.body?.method);
 }));
+app.post('/api/payments/:id/upi', auth, wrap((req) => G.submitUpi(req.user, req.params.id, req.body?.utr)));
 app.post('/api/payments/:id/capture', auth, wrap((req) => G.capturePayment(req.user, req.params.id, req.body || {})));
 app.post('/api/razorpay/webhook', wrap((req) => {
   if (!razorpay.verifyWebhook(req.rawBody, req.headers['x-razorpay-signature'])) throw G.httpError(400, 'Webhook signature not verified');
@@ -331,6 +337,19 @@ app.post('/api/paypal/webhook', wrap(async (req) => {
   }
   return { received: true };
 }));
+
+// ---------- admin panel ----------
+app.post('/api/auth/admin', wrap((req) => {
+  const u = Admin.checkAdmin(String(req.body?.username || ''), String(req.body?.password || ''), req.ip);
+  return { token: sign(u), user: publicUser(u) };
+}));
+const adminOnly = (req) => { if (req.user.role !== 'admin') throw G.httpError(403, 'Admins only'); };
+app.get('/api/admin/overview', auth, wrap((req) => { adminOnly(req); return Admin.overview(); }));
+app.get('/api/admin/settings', auth, wrap((req) => { adminOnly(req); return getSettings(); }));
+app.put('/api/admin/settings', auth, wrap((req) => { adminOnly(req); return updateSettings(req.body || {}); }));
+app.get('/api/admin/payments', auth, wrap((req) => { adminOnly(req); return Admin.upiPayments(req.query.status); }));
+app.post('/api/admin/payments/:id/confirm', auth, wrap((req) => { adminOnly(req); Admin.confirmUpi(req.params.id); return Admin.upiPayments(); }));
+app.post('/api/admin/payments/:id/reject', auth, wrap((req) => { adminOnly(req); Admin.rejectUpi(req.params.id, req.body?.note); return Admin.upiPayments(); }));
 
 // ---------- delivery partners ----------
 const riderOnly = (req) => { if (req.user.role !== 'rider') throw G.httpError(403, 'Delivery partner accounts only'); };

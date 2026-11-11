@@ -12,6 +12,8 @@ process.env.RIDER_SIM_SPEED_KMH = '4000';
 process.env.AI_API_KEY = '';
 process.env.PAYPAL_CLIENT_ID = '';
 process.env.GOOGLE_MAPS_API_KEY = '';
+process.env.ADMIN_USERNAME = 'admin';
+process.env.ADMIN_PASSWORD = 'test-admin-pass';
 
 let base, server;
 const call = async (method, url, body, token) => {
@@ -85,7 +87,7 @@ test('multi-store neighbours → one rider, private views, split payment, delive
   assert.equal(done.savings.status, 'confirmed');
 });
 
-test('one neighbour pays for the whole group', async () => {
+test('neighbours in the same shop group each pay for their own order (no pay-for-everyone)', async () => {
   const [a, b] = await Promise.all([login('Esha', near(0.002, 0.002)), login('Farhan', near(0.0021, 0.0022))]);
   const ra = await order(a, 'fx_snacks');
   const rb = await order(b, 'fx_snacks');
@@ -93,10 +95,14 @@ test('one neighbour pays for the whole group', async () => {
   const v = (await call('POST', `/api/groups/${ra.body.groupId}/lock`, null, b)).body;
   assert.equal(v.plan.type, 'combined');
   assert.equal(v.me.bill.discountPct, 5);
-  const p = await call('POST', '/api/payments', { groupId: ra.body.groupId, scope: 'group' }, b);
-  assert.equal(p.body.covers, 2);
-  await call('POST', `/api/payments/${p.body.id}/capture`, null, b);
-  assert.equal((await call('GET', `/api/groups/${ra.body.groupId}`, null, a)).body.me.pay, 'covered');
+  const all = await call('POST', '/api/payments', { groupId: ra.body.groupId, scope: 'group' }, b);
+  assert.equal(all.status, 400, 'paying for the whole group is no longer allowed');
+  for (const tok of [a, b]) {
+    const p = await call('POST', '/api/payments', { groupId: ra.body.groupId, scope: 'mine' }, tok);
+    assert.equal(p.body.covers, 1);
+    await call('POST', `/api/payments/${p.body.id}/capture`, null, tok);
+  }
+  assert.equal((await call('GET', `/api/groups/${ra.body.groupId}`, null, a)).body.me.pay, 'paid');
 });
 
 test('merchant can claim a real store and edit its menu', async () => {
@@ -202,4 +208,40 @@ test('delivery partner: goes online, gets the job, sees customer details, comple
   assert.equal(done.savings.status, 'confirmed');
   const other = await login('Nosy');
   assert.equal((await call('GET', '/api/rider/jobs', null, other)).status, 403, 'customers cannot see rider jobs');
+});
+
+test('admin panel: sign in, set UPI ID, customer pays with UPI app, admin confirms', async () => {
+  assert.equal((await call('POST', '/api/auth/admin', { username: 'admin', password: 'wrong' })).status, 401);
+  const adm = (await call('POST', '/api/auth/admin', { username: 'admin', password: 'test-admin-pass' })).body;
+  assert.equal(adm.user.role, 'admin');
+  const cust = await login('Uma', near(0.008, 0.008));
+  assert.equal((await call('GET', '/api/admin/overview', null, cust)).status, 403, 'customers cannot open the admin panel');
+  assert.equal((await call('PUT', '/api/admin/settings', { upiId: 'not a upi id' }, adm.token)).status, 400);
+  const st = (await call('PUT', '/api/admin/settings', { upiId: 'crowdkart@okaxis', payeeName: 'CrowdKart Team', waitMinutes: 0 }, adm.token)).body;
+  assert.equal(st.upiId, 'crowdkart@okaxis');
+  assert.equal((await call('GET', '/api/config')).body.payments.upi.vpa, 'crowdkart@okaxis');
+
+  // Placing an order goes straight to payment
+  const r = await call('POST', '/api/checkout', { lines: [{ merchantId: 'fx_burger', itemId: await firstItem(cust, 'fx_burger'), qty: 1 }] }, cust);
+  const g = (await call('GET', `/api/groups/${r.body.groupId}`, null, cust)).body;
+  assert.equal(g.status, 'awaiting_payment', 'payment opens immediately');
+
+  const p = (await call('POST', '/api/payments', { groupId: r.body.groupId, scope: 'mine', method: 'upi' }, cust)).body;
+  assert.equal(p.provider, 'upi');
+  assert.match(p.upiUri, /^upi:\/\/pay\?pa=crowdkart%40okaxis&pn=CrowdKart%20Team&am=\d+\.00&cu=INR/);
+  assert.ok(p.upiUri.includes(`am=${g.me.bill.total}.00`), 'amount matches the bill');
+  assert.equal((await call('POST', `/api/payments/${p.id}/capture`, null, cust)).status, 403, 'customer cannot self-confirm UPI');
+  assert.equal((await call('POST', `/api/payments/${p.id}/upi`, { utr: '123' }, cust)).status, 400);
+  assert.equal((await call('POST', `/api/payments/${p.id}/upi`, { utr: '4012 3456 7890' }, cust)).status, 200);
+  assert.equal((await call('GET', `/api/groups/${r.body.groupId}`, null, cust)).body.upi.status, 'submitted');
+
+  const queue = (await call('GET', '/api/admin/payments?status=submitted', null, adm.token)).body;
+  const mineInQueue = queue.find((x) => x.id === p.id);
+  assert.equal(mineInQueue.utr, '401234567890');
+  assert.equal((await call('GET', '/api/admin/overview', null, adm.token)).body.counts.upiToVerify >= 1, true);
+  await call('POST', `/api/admin/payments/${p.id}/confirm`, null, adm.token);
+  const after = (await call('GET', `/api/groups/${r.body.groupId}`, null, cust)).body;
+  assert.equal(after.me.pay, 'paid');
+  assert.ok(['paid', 'in_transit', 'delivered'].includes(after.status), 'rider dispatched after confirmation');
+  await call('PUT', '/api/admin/settings', { waitMinutes: 10 }, adm.token); // leave other tests unaffected
 });

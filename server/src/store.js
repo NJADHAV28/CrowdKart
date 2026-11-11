@@ -6,7 +6,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { config } from './config.js';
 
-const COLLECTIONS = ['users', 'merchants', 'zones', 'orders', 'orderSignals', 'groups', 'payments', 'deliveries', 'savings', 'brandProducts'];
+const COLLECTIONS = ['users', 'merchants', 'zones', 'orders', 'orderSignals', 'groups', 'payments', 'deliveries', 'savings', 'brandProducts', 'settings'];
 const file = () => path.join(config.dataDir, 'db.json');
 
 let db = Object.fromEntries(COLLECTIONS.map((c) => [c, []]));

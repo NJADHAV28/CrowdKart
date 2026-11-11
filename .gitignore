@@ -12,3 +12,4 @@ client/ios/App/Pods/
 client/ios/App/build/
 *.log
 .DS_Store
+.claude/

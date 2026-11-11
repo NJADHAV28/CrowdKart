@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Bike, Loader2, Search, Store as StoreIcon } from 'lucide-react';
+import { ArrowLeft, Bike, Loader2, Lock, Search, Store as StoreIcon } from 'lucide-react';
 import { api, needsServerChoice, serverUrl, setServerUrl } from '../api.js';
 import { useApp } from '../App.jsx';
 import { Logo, StoreIcon as KindIcon, storeSubtitle } from '../components/ui.jsx';
@@ -51,6 +51,7 @@ export default function Login() {
               <button className="btn-primary mt-6 w-full !py-3.5" disabled={name.trim().length < 2} onClick={() => setStep(2)}>Continue</button>
               <button className="mt-5 flex w-full items-center justify-center gap-1.5 text-sm text-sub hover:text-ink" onClick={() => setMode('merchant')}><StoreIcon size={15} />Own a shop or restaurant? Sign in here</button>
               <button className="mt-3 flex w-full items-center justify-center gap-1.5 text-sm text-sub hover:text-ink" onClick={() => setMode('rider')}><Bike size={15} />Delivery partner? Sign in here</button>
+              <button className="mt-6 flex w-full items-center justify-center gap-1 text-xs text-faint hover:text-ink" onClick={() => setMode('admin')}><Lock size={12} />Admin</button>
             </>
           )}
 
@@ -74,6 +75,7 @@ export default function Login() {
 
           {mode === 'merchant' && <MerchantSignIn busy={busy} onBack={() => setMode('customer')} onSubmit={submit} />}
           {mode === 'rider' && <RiderSignIn busy={busy} onBack={() => setMode('customer')} onSubmit={submit} />}
+          {mode === 'admin' && <AdminSignIn onBack={() => setMode('customer')} />}
 
           {needsServerChoice() && (
             <details className="mt-8 text-sm text-sub">
@@ -173,5 +175,33 @@ function RiderSignIn({ busy, onBack, onSubmit }) {
       <button className="btn-primary mt-6 w-full !py-3.5" disabled={busy || !ok} onClick={() => onSubmit({ role: 'rider', name: name.trim(), phone, vehicle })}>Start delivering</button>
       <p className="mt-3 text-center text-[11px] text-faint">Your number is used to sign you in and is shown to shops when you pick up.</p>
     </>
+  );
+}
+
+function AdminSignIn({ onBack }) {
+  const { login, toast } = useApp();
+  const nav = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [busy, setBusy] = useState(false);
+  const go = async (e) => {
+    e.preventDefault();
+    setBusy(true);
+    try {
+      const r = await api.post('/auth/admin', { username, password });
+      login(r.token, r.user);
+      nav('/');
+    } catch (err) { toast({ kind: 'error', text: err.message }); } finally { setBusy(false); }
+  };
+  return (
+    <form onSubmit={go}>
+      <button type="button" className="mb-3 flex items-center gap-1 text-sm text-sub hover:text-ink" onClick={onBack}><ArrowLeft size={16} />Back</button>
+      <h2 className="text-lg font-semibold">Admin sign-in</h2>
+      <label className="field-label mt-4">Username</label>
+      <input className="input" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <label className="field-label mt-4">Password</label>
+      <input className="input" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <button type="submit" className="btn-primary mt-6 w-full !py-3.5" disabled={busy || !username || !password}>{busy ? <Loader2 size={18} className="animate-spin" /> : 'Sign in'}</button>
+    </form>
   );
 }
