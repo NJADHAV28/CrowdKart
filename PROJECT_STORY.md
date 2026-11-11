@@ -69,6 +69,18 @@ The planner also refuses to group orders at all when one shared trip wouldn't ac
 - **Multi-shop carts broke our data model.** We first assumed one person = one order per group. Supporting several shops in one checkout meant reworking billing, payments and delivery stops, and merging same-door drops so the rider doesn't "deliver twice" to one flat.
 - **Privacy versus a useful map.** Showing the rider's full route would reveal neighbours' addresses. We settled on showing each customer only the road route from the rider to *their* shop and door.
 
+## Accomplishments that we're proud of
+
+- **It works on real streets, not a demo map.** Around our own area in Sangli, CrowdKart finds **over 1,000 real places within 5 km**, including 194 hotels, 102 bakeries, 137 grocery and kirana stores and 100 pharmacies, with delivery times from actual road travel times.
+- **One rider really does replace many.** In our end-to-end tests, three neighbours ordering from three different shops are grouped automatically and served by **one rider in one trip**. Every one of them pays less than they would alone, which the code guarantees: if an equal split $C/n$ would ever exceed someone's solo fee $s_i$, it switches to a proportional split so that $\text{share}_i \le s_i$.
+- **Privacy we can prove, not just promise.** Our automated tests check that one customer's API responses never contain another customer's name, address, shop or items. Matching runs only on anonymous signals rounded to about 110 m, and activity below 2 people is never shown.
+- **A full delivery loop with three roles.** Customers order and track. A real **delivery partner** goes online, is auto-assigned the nearest job, sees exactly what to pick up and where to deliver (name, flat, phone, instructions), and marks each stop. **Merchants** see orders and edit their menus. All three update live over WebSockets.
+- **One cart, many shops, one payment.** Up to 25 items from up to 6 shops become one checkout, one combined bill and one UPI payment, delivered by one rider with a single drop at your door.
+- **A polished, responsive quick-commerce experience.** A delivery-time header, category aisles, instant search across shop items and real branded products (with genuine pack photos from Open Food Facts), a slide-in cart, tips and delivery instructions. It all works on phones, tablets and desktops.
+- **Honest by design.** Estimated prices are marked **≈**, savings stay "estimated" until delivery confirms them, and CrowdRoute refuses to group orders when sharing wouldn't actually save money.
+- **One codebase, every platform.** The same app runs as a website (installable PWA), a Windows/macOS/Linux desktop app with its own built-in server, and Android/iOS apps.
+- **Tested end to end.** Eight automated server tests cover the full journey: location login, multi-shop matching, both payment modes, multi-shop checkout with the 25-item limit, tips and instructions, merchant menus, the places map, and the delivery-partner flow from going online to "delivered".
+
 ## What we learned
 
 - How to design a system where **privacy is part of the data model**, not a settings toggle.
