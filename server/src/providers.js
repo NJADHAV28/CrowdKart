@@ -98,7 +98,9 @@ export async function tomtom([lat, lng], radiusM) {
   const failed = results.filter((r) => r.status === 'rejected');
   if (failed.length) console.warn(`[places] TomTom: ${failed.length}/${results.length} searches failed (${failed[0].reason?.message})`);
   if (failed.length === results.length) throw failed[0].reason;
-  return results.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
+  const out = results.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
+  if (failed.length) out.partial = true; // some searches were rate-limited: refetch soon
+  return out;
 }
 
 // ---------------------------------------------------------------- Ola Maps

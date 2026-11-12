@@ -14,7 +14,7 @@ import { cellsAround, haversineKm, validLoc } from './geo.js';
 import { explainGroup } from './ai.js';
 import { verifyWebhook } from './paypal.js';
 import { resumeDeliveries, completeStop, updatePartnerLocation } from './delivery.js';
-import { nearbyStores, travelTimes, deliveryEta, deliverable, googleMapsUrl } from './places.js';
+import { nearbyStores, travelTimes, deliveryEta, deliverable, googleMapsUrl, lastRun } from './places.js';
 import { buildMenu, CATALOG_VERSION } from './catalog.js';
 import compression from 'compression';
 import * as geocode from './geocode.js';
@@ -76,7 +76,7 @@ const publicStore = (m, tt) => ({
   distanceKm: tt?.km ?? null, etaMin: tt ? deliveryEta(m, tt) : null,
 });
 
-app.get('/api/health', (req, res) => res.json({ ok: true, ai: aiEnabled(), razorpay: razorpayEnabled(), paypal: paypalEnabled(), places: placeProviders() }));
+app.get('/api/health', (req, res) => res.json({ ok: true, ai: aiEnabled(), razorpay: razorpayEnabled(), paypal: paypalEnabled(), places: placeProviders(), placesLastRun: lastRun }));
 app.get('/api/config', (req, res) => res.json({
   categories: CATEGORIES,
   payments: {

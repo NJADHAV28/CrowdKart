@@ -43,7 +43,8 @@ async function overpass(loc, radiusM) {
     return await overpassQuery(loc, radiusM);
   } catch (e) {
     // Public servers are often overloaded: retry once with a lighter query (smaller area).
-    if (radiusM <= 3500) throw e;
+    // Don't make customers wait for a second try when TomTom/Google/Ola already give the list.
+    if (radiusM <= 3500 || config.places.tomtomKey || config.places.googleKey || config.places.olaKey) throw e;
     console.warn('[places] OpenStreetMap busy, retrying with a smaller area');
     return overpassQuery(loc, 3500);
   }
@@ -56,7 +57,7 @@ async function overpassQuery([lat, lng], radiusM) {
   // Race every mirror; the first good answer wins (public Overpass servers are often slow or blocked).
   const j = await Promise.any(config.places.overpassUrls.map((url) => fetchJson(url, {
     method: 'POST', body: `data=${encodeURIComponent(q)}`, headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  }, 45000).then((r) => { if (!Array.isArray(r.elements)) throw new Error('bad response'); return r; })));
+  }, config.places.tomtomKey || config.places.googleKey || config.places.olaKey ? 20000 : 40000).then((r) => { if (!Array.isArray(r.elements)) throw new Error('bad response'); return r; })));
   return j.elements.map((e) => {
     const t = e.tags || {};
     const category = AMENITY_CAT[t.amenity] || SHOP_CAT[t.shop] || TOURISM_CAT[t.tourism];
@@ -124,8 +125,15 @@ export async function fetchAllProviders(loc, radiusM) {
   const results = await Promise.allSettled(jobs.map(([, fn]) => fn()));
   const out = [];
   results.forEach((r, i) => {
-    if (r.status === 'fulfilled') { out.push(...r.value); lastRun[jobs[i][0]] = { ok: true, count: r.value.length, at: Date.now() }; }
-    else { lastRun[jobs[i][0]] = { ok: false, error: r.reason?.message, at: Date.now() }; console.warn(`[places] ${jobs[i][0]} failed:`, r.reason?.message); }
+    if (r.status === 'fulfilled') {
+      out.push(...r.value);
+      if (r.value.partial) out.partial = true;
+      lastRun[jobs[i][0]] = { ok: true, count: r.value.length, partial: !!r.value.partial, at: new Date().toISOString() };
+    } else {
+      out.partial = true;
+      lastRun[jobs[i][0]] = { ok: false, error: String(r.reason?.message || 'failed').slice(0, 120), at: new Date().toISOString() };
+      console.warn(`[places] ${jobs[i][0]} failed:`, r.reason?.message);
+    }
   });
   if (!out.length && results.every((r) => r.status === 'rejected')) throw results[0].reason;
   return out;
@@ -182,7 +190,8 @@ export async function nearbyStores(loc, radiusKm = config.places.radiusKm) {
           seen.add(r.id);
           upsert(r);
         }
-        areaCache.set(key, Date.now());
+        // If a provider failed or was rate-limited, try this area again in ~2 minutes instead of an hour.
+        areaCache.set(key, list.partial ? Date.now() - Math.max(0, config.places.cacheMin - 2) * 60000 : Date.now());
       })().finally(() => inflight.delete(key));
       inflight.set(key, p);
     }

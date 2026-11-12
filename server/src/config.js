@@ -5,6 +5,14 @@ import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
+// Keys pasted into hosting dashboards (Render etc.) often carry stray spaces or quotes: clean them.
+for (const [k, v] of Object.entries(process.env)) {
+  if (/(_KEY|_SECRET|_ID|_URL|_URLS|_PASSWORD|_USERNAME|_MODEL|_ENV)$/.test(k) && typeof v === 'string') {
+    const clean = v.trim().replace(/^(['"])(.*)$/, '$2').trim();
+    if (clean !== v) process.env[k] = clean;
+  }
+}
+
 export const config = {
   port: Number(process.env.PORT || 4000),
   jwtSecret: process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex'),
