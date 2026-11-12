@@ -28,6 +28,10 @@ export default function Checkout() {
   const [promo, setPromo] = useState(readPromo());
   const [busy, setBusy] = useState(false);
   const [phone, setPhone] = useState(user.phone || '');
+  const [placedId, setPlacedId] = useState(null);
+  // Just placed an order: go to its order/payment screen (checked before the empty-cart redirect,
+  // because the cart is emptied right after placing).
+  if (placedId) return <Navigate to={`/group/${placedId}`} replace />;
   if (!cart.count) return <Navigate to="/cart" replace />;
 
   const tipValue = custom ? Math.max(0, Math.min(200, Number(custom) || 0)) : tip;
@@ -47,10 +51,11 @@ export default function Checkout() {
         instructions: [...notes, ...(note.trim() ? [`Note: ${note.trim()}`] : [])],
         lines: cart.lines.map((l) => ({ merchantId: l.store.id, itemId: l.item.id, qty: l.qty })),
       });
-      cart.clear();
-      savePromo(null);
-      toast(r.joinedExisting ? { title: 'You joined your neighbours', text: 'Your order shares their delivery.' } : { title: r.orders > 1 ? `Order placed with ${r.orders} shops` : 'Order placed', text: 'Checking if neighbours are ordering too.' });
+      setPlacedId(r.groupId);
       nav(`/group/${r.groupId}`, { replace: true });
+      setTimeout(() => cart.clear(), 0); // empty the cart only after we've left the checkout
+      savePromo(null);
+      toast(r.joinedExisting ? { title: 'You joined your neighbours', text: 'Your order shares their delivery.' } : { title: r.orders > 1 ? `Order placed with ${r.orders} shops` : 'Order placed', text: 'Complete your payment to confirm it.' });
     } catch (e) {
       toast({ kind: 'error', text: e.message });
       if (e.data?.groupId) nav(`/group/${e.data.groupId}`);
