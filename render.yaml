@@ -1,24 +1,51 @@
-
+# Deploy on Render: Dashboard → New → Blueprint → pick this GitHub repo.
+# One web service runs the API, WebSockets (live tracking) and serves the built website.
 services:
   - type: web
     name: crowdkart
     runtime: node
     plan: free
-    buildCommand: cd client && npm install && npm run build && cd ../server && npm install
-    startCommand: cd server && npm start
+    # Only the server + website are installed (skips the desktop app's Electron download)
+    buildCommand: npm install -w server -w client --include=dev --no-audit --no-fund && npm run build -w client
+    startCommand: npm start -w server
     healthCheckPath: /api/health
     envVars:
+      - key: NODE_VERSION
+        value: "22"
       - key: JWT_SECRET
         generateValue: true
+      # Admin panel sign-in
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      # AI (router.bynara.id, OpenAI-compatible)
       - key: AI_BASE_URL
         value: https://router.bynara.id/v1
       - key: AI_MODEL
-        value: gemini-2.5-flash
+        value: deepseek-v4.1-flash-fast
       - key: AI_API_KEY
         sync: false
+      # PayPal sandbox
+      - key: PAYPAL_ENV
+        value: sandbox
       - key: PAYPAL_CLIENT_ID
         sync: false
       - key: PAYPAL_CLIENT_SECRET
         sync: false
-      - key: PAYPAL_ENV
-        value: sandbox
+      - key: PAYPAL_WEBHOOK_ID
+        sync: false
+      # Razorpay (optional)
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      # Live shops & maps (optional keys)
+      - key: TOMTOM_API_KEY
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: OLA_MAPS_API_KEY
+        sync: false
+      - key: STORE_RADIUS_KM
+        value: "5"
